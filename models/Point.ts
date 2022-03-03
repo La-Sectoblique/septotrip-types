@@ -44,3 +44,7 @@ export function isPointOutput(object: unknown): object is PointOutput {
 		isCommonAttributes(object)
 	);
 }
+
+export function isPointOutputArray(objects: unknown[]): objects is PointOutput[] {
+	return objects.every( object => isPointOutput(object) );
+}
