@@ -34,3 +34,7 @@ export function isUserOutput(object: unknown): object is UserOutput {
 		isCommonAttributes(object)
 	);
 }
+
+export function isUserOutputArray(objects: unknown[]): objects is UserOutput[] {
+	return objects.every( object => isUserOutput(object) );
+}
