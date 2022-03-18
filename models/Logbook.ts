@@ -61,3 +61,11 @@ export function isLogbookEntryOutput(object: unknown): object is LogbookEntryOut
 		isCommonAttributes(object)
 	);
 }
+
+export function isLogbookEntryOutputArray(objects: unknown[]): objects is LogbookEntryOutput[] {
+	return objects.every( object => isLogbookEntryOutput(object) );
+}
+
+export function isLogbookOutputArray(objects: unknown[]): objects is LogbookOutput[] {
+	return objects.every( object => isLogbookOutput(object) );
+}
