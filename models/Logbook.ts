@@ -10,6 +10,7 @@ export type LogbookEntryAttributes = {
 export type LogbookAttributes = {
 	name: string;
 	authorId: number;
+	tripId: number;
 };
 
 export type LogbookInput = LogbookAttributes;
@@ -30,7 +31,8 @@ export function isLogbookEntryAttributes(object: unknown): object is LogbookEntr
 export function isLogbookAttributes(object: unknown): object is LogbookAttributes {
 	return (
 		(object as LogbookAttributes).name !== undefined &&
-		(object as LogbookAttributes).authorId !== undefined
+		(object as LogbookAttributes).authorId !== undefined &&
+		(object as LogbookAttributes).tripId !== undefined
 	);
 }
 

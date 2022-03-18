@@ -11,6 +11,7 @@ export type PointAttributes = {
 	description?: string;
     localisation: LocalisationPoint;
     authorId: number;
+	tripId: number;
 };
 
 export type PointInput = PointAttributes;
@@ -28,6 +29,8 @@ export function isLocalisationPoint(object: unknown): object is LocalisationPoin
 export function isPointAttributes(object: unknown): object is PointAttributes {
 	return (
 		(object as PointAttributes).title !== undefined &&
+		(object as PointAttributes).authorId !== undefined &&
+		(object as PointAttributes).tripId !== undefined &&
 		isLocalisationPoint((object as PointAttributes).localisation)
 	);
 }
