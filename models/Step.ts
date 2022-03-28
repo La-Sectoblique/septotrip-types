@@ -1,4 +1,5 @@
 import { CommonAttributes, isCommonAttributes } from "./Common";
+import { isLocalisationPoint, LocalisationPoint } from "./Point";
 
 
 // types
@@ -6,6 +7,7 @@ export type StepAttributes = {
     name: string;
     order: number;
     tripId: number;
+	localisation: LocalisationPoint;
 };
 
 export type StepInput = StepAttributes;
@@ -16,7 +18,8 @@ export function isStepAttributes(object: unknown): object is StepAttributes {
 	return (
 		(object as StepAttributes).name !== undefined &&
         (object as StepAttributes).order !== undefined &&
-        (object as StepAttributes).tripId !== undefined
+        (object as StepAttributes).tripId !== undefined &&
+		isLocalisationPoint((object as StepAttributes).localisation)
 	);
 }
 
