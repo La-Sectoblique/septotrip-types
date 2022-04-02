@@ -6,6 +6,8 @@ export type TripAttributes = {
     name: string;
     visibility: Visibility;
     authorId: number;
+	startDate?: Date;
+	endDate?: Date;
 };
 
 export type TripInput = TripAttributes;
