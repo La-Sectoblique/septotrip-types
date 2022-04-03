@@ -3,6 +3,7 @@ import { CommonAttributes, isCommonAttributes } from "./Common";
 // types
 export type PathAttributes = {
 	description: string;
+	destinationId: number;
 };
 
 export type PathInput = PathAttributes;
@@ -11,7 +12,8 @@ export type PathOutput = CommonAttributes & PathAttributes;
 // type predicates
 export function isPathAttributes(object: unknown): object is PathAttributes {
 	return (
-		(object as PathAttributes).description !== undefined
+		(object as PathAttributes).description !== undefined && 
+		(object as PathAttributes).destinationId !== undefined
 	);
 }
 

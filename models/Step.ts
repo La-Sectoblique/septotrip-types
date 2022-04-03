@@ -8,6 +8,7 @@ export type StepAttributes = {
     order: number;
 	duration: number;
     tripId: number;
+	pathId?: number;
 	localisation: LocalisationPoint;
 };
 
