@@ -1,0 +1,31 @@
+import { CommonAttributes, isCommonAttributes } from "./Common";
+
+// types
+export type DayAttributes = {
+	number: number;
+    stepId: number;
+};
+
+export type DayInput = DayAttributes;
+export type DayOutput = DayAttributes & CommonAttributes;
+
+// type predicates
+export function isDayAttributes(object: unknown): object is DayAttributes {
+	return (
+		(object as DayAttributes).number !== undefined &&
+        (object as DayAttributes).stepId !== undefined
+	);
+}
+
+export function isDayInput(object: unknown): object is DayInput {
+	return (
+		isDayAttributes(object)
+	);
+}
+
+export function isDayOuput(object: unknown): object is DayOutput {
+	return (
+		isDayAttributes(object) &&
+		isCommonAttributes(object)
+	);
+}

@@ -19,8 +19,11 @@ export function isStepAttributes(object: unknown): object is StepAttributes {
 	return (
 		(object as StepAttributes).name !== undefined &&
         (object as StepAttributes).order !== undefined &&
-        (object as StepAttributes).tripId !== undefined &&
-		(object as StepAttributes).duration !== undefined &&
+		(
+			(object as StepAttributes).duration !== undefined &&
+			(object as StepAttributes).duration >= 1
+		) && 
+        (object as StepAttributes).tripId !== undefined && 
 		isLocalisationPoint((object as StepAttributes).localisation)
 	);
 }
