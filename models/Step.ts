@@ -6,6 +6,7 @@ import { isLocalisationPoint, LocalisationPoint } from "./Point";
 export type StepAttributes = {
     name: string;
     order: number;
+	duration: number;
     tripId: number;
 	localisation: LocalisationPoint;
 };
@@ -19,6 +20,7 @@ export function isStepAttributes(object: unknown): object is StepAttributes {
 		(object as StepAttributes).name !== undefined &&
         (object as StepAttributes).order !== undefined &&
         (object as StepAttributes).tripId !== undefined &&
+		(object as StepAttributes).duration !== undefined &&
 		isLocalisationPoint((object as StepAttributes).localisation)
 	);
 }
