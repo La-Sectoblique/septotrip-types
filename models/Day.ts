@@ -29,3 +29,7 @@ export function isDayOuput(object: unknown): object is DayOutput {
 		isCommonAttributes(object)
 	);
 }
+
+export function isDayOuputArray(objects: unknown[]): objects is DayOutput[] {
+	return objects.every( object => isDayOuput(object) );
+}
