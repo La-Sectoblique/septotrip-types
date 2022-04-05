@@ -12,7 +12,8 @@ export type PointAttributes = {
     localisation: LocalisationPoint;
     authorId: number;
 	tripId: number;
-	stepId?: number; 
+	stepId?: number;
+	dayId?: number;
 };
 
 export type PointInput = PointAttributes;
