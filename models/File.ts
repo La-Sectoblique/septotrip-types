@@ -8,6 +8,10 @@ export type FileMetadataAttributes = {
 	extension: string;
 	mimeType: string;
 	visibility: Visibility;
+	tripId: number;
+	pointId?: number;
+	stepId?: number;
+	pathId?: number;
 };
 
 export type FileMetadataInput = FileMetadataAttributes;
