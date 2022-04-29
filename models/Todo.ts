@@ -1,6 +1,7 @@
 import { getEnumValues } from "../utils/Enum";
 import { CommonAttributes, isCommonAttributes } from "./Common";
 
+// types
 export enum TodoState {
 	TODO = "TODO",
 	DOING = "DOING",
