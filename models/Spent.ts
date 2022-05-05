@@ -50,3 +50,7 @@ export function isSpentOutput(object: unknown): object is SpentOutput {
 		isCommonAttributes(object)
 	);
 }
+
+export function isSpentOutputArray(objects: unknown[]): objects is SpentOutput[] {
+	return objects.every( object => isSpentOutput(object) );
+} 
