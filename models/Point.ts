@@ -13,7 +13,6 @@ export type PointAttributes = {
     authorId: number;
 	tripId: number;
 	stepId?: number;
-	dayId?: number;
 };
 
 export type PointInput = PointAttributes;
