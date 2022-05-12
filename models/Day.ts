@@ -25,13 +25,13 @@ export function isDayInput(object: unknown): object is DayInput {
 	);
 }
 
-export function isDayOuput(object: unknown): object is DayOutput {
+export function isDayOutput(object: unknown): object is DayOutput {
 	return (
 		isDayAttributes(object) &&
 		isCommonAttributes(object)
 	);
 }
 
-export function isDayOuputArray(objects: unknown[]): objects is DayOutput[] {
-	return objects.every( object => isDayOuput(object) );
+export function isDayOutputArray(objects: unknown[]): objects is DayOutput[] {
+	return objects.every( object => isDayOutput(object) );
 }
