@@ -14,7 +14,7 @@ export type DayOutput = DayAttributes & CommonAttributes;
 export function isDayAttributes(object: unknown): object is DayAttributes {
 	return (
 		(object as DayAttributes).number !== undefined &&
-        (object as DayAttributes).stepId !== undefined && 
+        (object as DayAttributes).stepId !== undefined 
 	);
 }
 
