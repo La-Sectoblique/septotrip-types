@@ -5,3 +5,7 @@ export interface GenericJsonObject {
 export interface GenericObjectWithStrings {
     [key: string]: string
 }
+
+export interface GenericObjectWithStringsAndNumber {
+    [key: string]: string | number
+}
