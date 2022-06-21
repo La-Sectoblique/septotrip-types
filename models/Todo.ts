@@ -3,9 +3,9 @@ import { CommonAttributes, isCommonAttributes } from "./Common";
 
 // types
 export enum TodoState {
-	TODO = "TODO",
-	DOING = "DOING",
-	DONE = "DONE"
+	TODO = 0,
+	DOING = 1,
+	DONE = 2
 }
 
 export type TodoEntryAttributes = {
@@ -25,8 +25,15 @@ export type TodoEntryOutput = TodoEntryAttributes & CommonAttributes;
 // types predicates
 export function isTodoState(object: unknown): object is TodoState {
 	return (
-		typeof object === "string" &&
-		getEnumValues(TodoState).includes(object)
+		(
+			typeof object === "string" &&
+			getEnumValues(TodoState).includes(object)
+		) || 
+		(
+			typeof object === "number" && 
+			getEnumValues(TodoState).includes(object)
+		)
+		
 	);
 }
 
